@@ -1,0 +1,74 @@
+/* CSS Custom Properties - Design System Variables */
+:root {
+  /* Colors - 2008 Facebook inspired palette */
+  --color-primary: #3b5998;
+  --color-primary-hover: #2d4373;
+  --color-primary-light: #6d84b4;
+  
+  /* Neutral colors */
+  --color-bg: #ffffff;
+  --color-text: #1c1e21;
+  --color-text-muted: #606770;
+  --color-border: #d3d6db;
+  --color-card: #ffffff;
+  --color-surface: #f5f6f7;
+  
+  /* Status colors */
+  --color-success: #4caf50;
+  --color-warning: #ff9800;
+  --color-error: #f44336;
+  --color-info: #2196f3;
+  
+  /* Spacing system (8px base) */
+  --space-xs: 4px;
+  --space-sm: 8px;
+  --space-md: 12px;
+  --space-lg: 16px;
+  --space-xl: 24px;
+  --space-2xl: 32px;
+  
+  /* Typography */
+  --font-family: Tahoma, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --font-size-xs: 10px;
+  --font-size-sm: 12px;
+  --font-size-base: 14px;
+  --font-size-lg: 16px;
+  --font-size-xl: 20px;
+  --font-size-2xl: 24px;
+  
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+  
+  /* Layout */
+  --border-radius-sm: 2px;
+  --border-radius-md: 4px;
+  --border-radius-lg: 6px;
+  
+  /* Shadows */
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 1px 3px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 4px 6px rgba(0, 0, 0, 0.1);
+  
+  /* Z-index scale */
+  --z-dropdown: 1000;
+  --z-sticky: 1020;
+  --z-fixed: 1030;
+  --z-modal-backdrop: 1040;
+  --z-modal: 1050;
+  --z-popover: 1060;
+  --z-tooltip: 1070;
+}
+
+/* Dark mode variables */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-bg: #18191a;
+    --color-text: #e4e6ea;
+    --color-text-muted: #b0b3b8;
+    --color-border: #3a3b3c;
+    --color-card: #242526;
+    --color-surface: #3a3b3c;
+  }
+}
