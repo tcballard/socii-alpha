@@ -16,3 +16,4 @@ supabase/.temp
 relay/.wrangler
 **/.wrangler
 *.lock
+.env
