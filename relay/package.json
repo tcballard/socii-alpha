@@ -1,0 +1,14 @@
+{
+  "name": "humanlink-relay",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy",
+    "d1:apply": "wrangler d1 execute humanlink-relay --file=./schema.sql"
+  },
+  "devDependencies": {
+    "wrangler": "^4.28.1"
+  }
+}

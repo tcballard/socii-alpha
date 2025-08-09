@@ -1,0 +1,18 @@
+# Root ignore
+node_modules
+**/node_modules
+.DS_Store
+*.log
+.env*
+.next
+**/.next
+.out
+dist
+build
+coverage
+.vercel
+.tmp
+supabase/.temp
+relay/.wrangler
+**/.wrangler
+*.lock

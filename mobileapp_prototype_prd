@@ -1,0 +1,249 @@
+# Socii Mobile App - Complete React Native Prototype
+
+## Project Overview
+Create a complete React Native mobile app prototype for "Socii" - a nostalgic social media platform inspired by 2008 Facebook aesthetics. The app prioritizes authentic connections, privacy, and simplicity over modern social media bloat.
+
+## Core Design Requirements
+- **Aesthetic**: 2008 Facebook nostalgia throughout
+- **Typography**: Tahoma font globally for all text elements with sans-serif fallbacks
+- **Color Palette**: #3b5998-inspired blue accents and gradients
+- **UI Style**: Minimal whitespace, subtle rounded corners, simple icons/buttons
+- **Feel**: Simple, trustworthy, intimate - avoid modern bloat
+
+## Technical Stack
+- **Framework**: React Native (Expo compatible)
+- **Navigation**: React Navigation with bottom tabs
+- **State Management**: Redux for feed/connections data
+- **Storage**: AsyncStorage for local caching
+- **Authentication**: Mock email-based system
+- **Data**: Mock data for all features (no real backend)
+
+## App Structure & Navigation
+Bottom tab navigation with 4 main tabs:
+1. **Feed** (default/home)
+2. **Connections** 
+3. **Profile**
+4. **Settings**
+
+**Total Screens**: ~10 (keeping it simple)
+
+## Core Screens to Implement
+
+### 1. Splash/Loading Screen
+- Logo and tagline: "Social media as meant to be—your people, ad-free."
+- Loading indicator
+- Tahoma font styling
+- Blue gradient background
+
+### 2. Onboarding/Login/Signup Flow
+- Multi-step email-based signup
+- Password creation
+- Privacy policy consent checkbox
+- 30-day trial prompt
+- Invite code field (optional)
+- Nostalgic blue gradients
+- Clean form styling in Tahoma
+
+### 3. Home/Feed Tab (Default)
+- **Chronological timeline** of posts (no algorithms)
+- Post previews: text, photos, videos
+- Like/comment buttons on each post
+- "What you missed" catch-up section
+- Swipe to refresh gesture
+- No infinite scroll - show "You're all caught up" message
+- All text in Tahoma font
+
+### 4. Post Creation Modal
+- Triggered from Feed tab
+- Text input (500 character limit)
+- Photo/video upload simulation (mock)
+- Audience selector (All connections or subsets)
+- Life event tags dropdown
+- Simple form layout with Tahoma labels
+- Blue accent buttons
+
+### 5. Connections Tab
+- List view of connections with categories (Family/Friends)
+- Add/invite via email search
+- Connection approval system (mutual consent)
+- Mute/archive options
+- Tier upgrade prompt when nearing 25-150 limit
+- Clean list styling in Tahoma
+
+### 6. Search/Add Connections (Nested)
+- Email-based search only
+- Contact import opt-in (simulated)
+- Send invitation functionality
+- Minimalist search interface
+
+### 7. Profile Tab
+- User's own profile view/edit
+- Bio and photo upload (mock)
+- Connection count and tier information
+- Export data button
+- Recent posts grid
+- 2008-style profile card design
+
+### 8. Other User's Profile
+- View connection's shared posts only
+- Mutual connection indicator
+- Privacy-focused layout
+- No public access simulation
+
+### 9. Notifications
+- Pull-down or separate tab
+- Connection requests
+- New posts/comments alerts
+- Low-volume, meaningful notifications only
+- Simple bullet-list style in Tahoma
+
+### 10. Settings Tab
+- Privacy toggles and controls
+- Subscription/tier management (mock Stripe integration)
+- Dark mode toggle
+- Data export/delete options
+- Help/feedback sections
+- All menu items in Tahoma
+
+## Key Features & Functionality
+
+### MVP Features
+- **Chronological Feed**: No algorithms, pure timeline
+- **Tiered Connections**: 25-150 connection limits with upgrade prompts  
+- **Privacy Controls**: E2E encryption indicators, data export
+- **Content Sharing**: Text/media posts with audience selection
+- **Connection Management**: Mutual consent, email-based adding
+
+### Mock Data Requirements
+Create realistic mock data for:
+- User profiles (10-15 sample users)
+- Posts (text, photos, videos) with timestamps
+- Connection relationships
+- Notifications
+- Comments and likes
+
+### User Flows to Implement
+1. **Launch → Onboarding → Feed**
+2. **Feed → Post Detail → Comment/Reply**
+3. **Connections → Search → Invite → Notification**
+4. **Near Limit → Settings → Mock Subscription**
+5. **Settings → Data Export**
+
+### Edge Cases
+- Empty feed state: "Add connections to see posts"
+- Offline mode: Show cached content
+- Error states: Simple, friendly dialogs in Tahoma
+- New user guidance: Onboarding tooltips
+
+## Technical Implementation Details
+
+### File Structure
+```
+src/
+├── components/
+│   ├── common/
+│   ├── feed/
+│   ├── connections/
+│   └── profile/
+├── screens/
+│   ├── auth/
+│   ├── feed/
+│   ├── connections/
+│   ├── profile/
+│   └── settings/
+├── navigation/
+├── redux/
+│   ├── slices/
+│   └── store.js
+├── styles/
+│   ├── globalStyles.js
+│   └── colors.js
+├── utils/
+├── assets/
+│   └── fonts/
+└── App.js
+```
+
+### Font Integration
+- Import and configure Tahoma font for React Native
+- Create global typography styles
+- Provide sans-serif fallbacks
+
+### Redux Store Structure
+```javascript
+{
+  user: { profile, settings, connections },
+  feed: { posts, loading, lastUpdated },
+  notifications: { items, unreadCount },
+  ui: { activeTab, modals, darkMode }
+}
+```
+
+### Performance Targets
+- App launch: <2s
+- Feed refresh: <1s  
+- Smooth 60fps navigation
+- Minimal memory usage
+
+## Visual Design Specifications
+
+### Colors
+- Primary Blue: #3b5998 (Facebook 2008 blue)
+- Secondary Blue: #6d84b4
+- Background: #ffffff (light mode), #1c1c1c (dark mode)
+- Text: #333333 (dark), #ffffff (light)
+- Borders: #d3d3d3
+- Success: #4caf50
+- Error: #f44336
+
+### Typography Scale
+- Heading 1: Tahoma 24px bold
+- Heading 2: Tahoma 20px bold  
+- Body: Tahoma 16px regular
+- Caption: Tahoma 14px regular
+- Small: Tahoma 12px regular
+
+### Component Styling
+- Buttons: Rounded corners (4px), blue gradients
+- Cards: Subtle shadows, rounded corners (6px)
+- Input fields: Simple borders, focus states
+- Icons: Simple, minimal design
+
+## Deliverables
+
+Generate a complete, runnable React Native project including:
+
+1. **App.js** - Main entry point
+2. **Complete navigation setup** with bottom tabs
+3. **All 10 core screens** fully implemented
+4. **Redux store and slices** for state management
+5. **Global styles** enforcing Tahoma typography
+6. **Mock data generators** for realistic content
+7. **Component library** for reusable UI elements
+8. **Asset integration** (fonts, icons, images)
+9. **Package.json** with all dependencies
+10. **README.md** with setup instructions
+
+## Success Criteria
+
+The prototype should:
+- ✅ Run successfully in Expo/React Native CLI
+- ✅ Display 2008 Facebook nostalgic aesthetic consistently
+- ✅ Demonstrate all core user flows with mock data
+- ✅ Use Tahoma font throughout the interface
+- ✅ Feel simple, trustworthy, and intimate
+- ✅ Show clear privacy and user control features
+- ✅ Handle basic gestures (swipe, tap, pull-to-refresh)
+- ✅ Work on both iOS and Android layouts
+- ✅ Include accessibility considerations
+- ✅ Maintain performance targets
+
+## Additional Notes
+
+- Prioritize code clarity and maintainability
+- Include detailed comments explaining 2008 Facebook inspiration
+- Add placeholder comments for Phase 2 features (groups, events)
+- Ensure easy testing and demonstration
+- Focus on evoking nostalgia and trust through design choices
+
+Generate the complete codebase that captures the essence of authentic, simple social connections in a beautifully nostalgic package.

@@ -1,0 +1,32 @@
+:root{
+  --bg:#ffffff;
+  --text:#1c1e21;
+  --muted:#606770;
+  --border:#d3d6db;
+  --card:#ffffff;
+  --primary:#3b5998;      /* Facebook 2008 blue */
+  --primary-600:#2d4373;  /* darker hover */
+}
+*{box-sizing:border-box}
+html,body,#__next{height:100%}
+body{margin:0;background:var(--bg);color:var(--text);font-family:Tahoma,Segoe UI,Roboto,Helvetica,Arial,sans-serif}
+a{color:var(--primary);text-decoration:none}
+button{font:inherit}
+
+.container{max-width:960px;margin:0 auto;padding:24px}
+.nav{display:flex;gap:16px;align-items:center;padding:10px 16px;border-bottom:1px solid var(--border);position:sticky;top:0;background:var(--primary);z-index:10}
+.nav a{color:#fff}
+.brand{font-weight:700;margin-right:8px;color:#fff}
+.row{display:flex;gap:8px;align-items:center}
+.col{display:flex;flex-direction:column;gap:8px}
+
+.btn{appearance:none;border:1px solid var(--border);background:#fff;color:var(--text);padding:8px 12px;border-radius:0;cursor:pointer}
+.btn:hover{border-color:#bfc3c9}
+.btn.primary{background:var(--primary);color:#fff;border-color:var(--primary);border-radius:0}
+.btn.primary:hover{background:var(--primary-600);border-color:var(--primary-600)}
+
+.input{border:1px solid var(--border);padding:8px 10px;border-radius:0;width:100%}
+.card{border:1px solid var(--border);border-radius:0;padding:12px;background:var(--card)}
+.muted{color:var(--muted)}
+.stack{display:flex;flex-direction:column;gap:12px}
+

@@ -1,0 +1,313 @@
+# Socii - Product Requirements Document (PRD)
+
+**Version**: 2.0  
+**Date**: July 24, 2025  
+**Product Owner**: [Your Name]  
+**Status**: Updated Draft (Incorporating YC-Style Feedback: Updated stats to mid-2025 data, added PMF validation hypotheses, consolidated personas, quantified WTP, justified feature decisions, extended trial period, adjusted unit economics based on benchmarks, added leading indicators to metrics, and enhanced risks/mitigations with current context)
+
+---
+
+## Executive Summary
+
+Socii (formerly Gather) is a subscription-based social network designed for authentic connections with close friends and family. By limiting connections to meaningful relationships and providing an ad-free, chronological feed experience, Socii addresses the core frustrations of users aged 30-45 who feel overwhelmed by traditional social media platforms.
+
+**Core Value Proposition**: "Your digital dinner table for the people who actually matter."
+
+---
+
+## Problem Statement
+
+### User Pain Points (Based on Market Research)
+Research methodology: Compiled from recent industry reports (e.g., Statista, Backlinko, Pew Research), user surveys (e.g., GWI Q1 2025), and X sentiment analysis (e.g., common complaints about ads and algorithms). Validated via planned 50-100 user interviews.
+
+1. **Advertising Overload**: Users report feeds as 70-80% suggested content, with increasing ad interruptions (e.g., every 10 seconds on some videos).
+2. **Algorithm Frustration**: Only ~30% of feed content is from friends; the rest prioritizes pages and influencers, leading to missed personal updates.
+3. **Fake Accounts**: ~1.1 billion fake accounts removed quarterly, representing an ongoing 7-8% of total accounts and undermining trust.
+4. **Privacy Concerns**: 72-87% of users cite data privacy as a reason for concern or deletion, up from prior years amid breaches.
+5. **Platform Complexity**: Feature bloat makes simple connections difficult, exacerbating time management issues.
+6. **Time Manipulation**: Addictive designs affect ~210 million people worldwide, with 41% of users anxious without checks, conflicting with time goals.
+
+**PMF Validation Hypothesis**: If >60% of interviewed users rank these pains as 8/10+ severity and express WTP $3-5/month for a solution, core problem is validated.
+
+### Market Opportunity
+- 30-45 age demographic shows highest willingness to pay for privacy and authentic connections.
+- ~43% of users prefer chronological feeds (consistent from 2024-2025 surveys).
+- Subscription social media market valued at ~$30 billion in 2025, projected to $60 billion by 2029 (18% CAGR).
+- Main competitors (MeWe ~20M users, Vero ~8M users, Bluesky ~36M users) prove market exists; Snapchat+ has ~15M subscribers at $3.99/month.
+
+---
+
+## Product Vision & Strategy
+
+### Vision
+Create the world's most trusted space for maintaining meaningful relationships online (measured by NPS >80).
+
+### Mission
+To help people focus on their real social connections by providing a simple, private, ad-free platform that respects their time and data.
+
+### Strategic Pillars
+1. **Intimacy Over Scale**: Quality relationships over quantity of connections.
+2. **Transparency First**: Clear business model, no hidden data usage.
+3. **Time Well Spent**: Design for meaningful interaction, not endless scrolling (target session duration: 5-10 min).
+4. **User Agency**: Users control their experience completely.
+
+**PMF Validation Hypothesis**: If beta users achieve >50% retention at 1 month with sessions averaging 5-10 min, pillars are resonating.
+
+---
+
+## Target User Personas
+
+Consolidated tertiary persona (Family Connector) into primary for overlap; focused on two core archetypes.
+
+### Primary: "Connected Parent/Family Organizer" (Sarah, 38)
+- **Demographics**: Married, 2+ kids, suburban/global family, $75K+ income.
+- **Behavior**: Checks social media 5x daily but frustrated by ads and missing posts; organizes family comms across platforms.
+- **Goals**: Stay connected with extended family, share milestones safely, keep dispersed relatives engaged.
+- **Pain Points**: Privacy concerns, irrelevant content, missing updates, managing multiple apps for elderly relatives.
+- **Socii Value**: "Finally, one simple place to see what my actual family and friends are sharing."
+- **WTP**: $3-5/month for ad-free privacy (based on surveys showing 60%+ concern across incomes).
+
+### Secondary: "Digital Minimalist" (Mike, 42)
+- **Demographics**: Urban professional, privacy-conscious, $100K+ income.
+- **Behavior**: Limited or deleted mainstream accounts but misses genuine connections.
+- **Goals**: Maintain friendships without toxicity or addiction.
+- **Pain Points**: All-or-nothing choice between isolation and overwhelming platforms.
+- **Socii Value**: "Social media that respects my time and privacy."
+- **WTP**: $4-7/month for curated experience (aligned with subscription trends).
+
+**PMF Validation Hypothesis**: If >70% of persona-matched beta users add 10+ connections in week 1, targeting is on point.
+
+---
+
+## Product Features & Requirements
+
+### Core Features (MVP)
+Justified tiers: Limits (25/50/100/150) based on Dunbar's number (~150 max meaningful relationships) and user surveys showing most need <50 "real" connections; prevents overload.
+
+| Feature | Description | Why? (Tied to Personas) |
+|---------|-------------|--------------------------|
+| Tiered Connection System | Inner Circle: Up to 25 ($2.99/month)<br>Close Friends: Up to 50 ($4.99/month)<br>Full Circle: Up to 100 ($7.99/month)<br>Family Plan: Up to 150, 5 accounts ($9.99/month) | Sarah: Manages family (25-50 core); Mike: Prefers minimal (25). Limits enforce intimacy. |
+| Chronological Feed | Pure timeline; no filtering; timestamp visibility; catch-up mode. | Both: Addresses algorithm frustration; Sarah misses updates. |
+| Privacy & Security | No data mining; E2E encryption; private profiles; data export. | Mike: Privacy focus; Sarah: Safe family sharing. |
+| Content Sharing | Photos/videos (up to 10/post); text (500 chars); life events; no resharing. | Sarah: Milestones; limits viral to maintain trust. |
+| Connection Management | Mutual consent; categories; mute/archive. | Both: Agency over circles. |
+
+**PMF Validation Hypotheses**:
+- >70% beta users fill 80% of slots in month 1 (else, adjust limits).
+- Engagement >3 posts/week (else, feed too stale).
+- <10% complaints on no resharing (else, add controlled sharing).
+
+### Phase 2 Features (Post-Launch)
+- Group conversations (max 25 people)
+- Event planning tools
+- Shared photo albums
+- Video calls (leverage WebRTC)
+- Annual printed photo books (additional revenue)
+
+### Explicitly Excluded Features
+- Public profiles or posts
+- Trending topics or viral content
+- Algorithmic recommendations
+- Stories or disappearing content (reconsidered but excluded to avoid addiction hooks; 2025 trends show short-form drives 71% returns but increases anxiety).
+- Business accounts or advertising
+- Influencer tools or analytics
+
+---
+
+## Technical Requirements
+
+### Platform Support
+- **Web**: Responsive design, all modern browsers
+- **iOS**: Native app, iOS 14+
+- **Android**: Native app, Android 8+
+- **Progressive Web App**: For easy adoption
+
+### Performance Requirements
+- Page load: <2 seconds
+- Image upload: <5 seconds
+- Feed refresh: <1 second
+- 99.9% uptime SLA
+
+### Security & Compliance
+- GDPR compliant
+- CCPA compliant
+- SOC 2 Type II certification
+- Regular security audits
+
+---
+
+## Business Model
+
+### Revenue Streams
+1. **Subscriptions** (Primary)
+   - As above.
+
+2. **Annual Plans** (20% discount)
+   - Improves cash flow; reduces churn; bonus +5 connections.
+
+3. **Future Revenue** (Year 2+)
+   - Printed photo books
+   - Premium video calling
+   - Extended storage
+
+### Pricing Strategy
+- No free tier (avoids monetization traps).
+- 30-day free trial (extended for better hooking).
+- Price anchoring with tiers.
+- Family plan for viral growth.
+
+### Unit Economics Target
+- CAC: <$25 (adjusted to 2025 social app benchmarks of $20-30 via paid/organic).
+- LTV: >$150
+- Payback period: <6 months
+- Gross margin: >80%
+
+---
+
+## Success Metrics
+
+### North Star Metric
+**Weekly Active Close Connections** - Number of mutual connections who both posted/engaged in the past week.
+
+### Key Metrics
+Added leading indicator: Pain Point Resolution Score (survey: How much better than alternatives? Target >7/10).
+
+#### Acquisition
+- Trial starts per month
+- Trial-to-paid conversion rate (target: >25%)
+- Cost per acquisition
+- Organic vs paid signup ratio
+
+#### Activation
+- Time to first post (<24 hours)
+- Connections added in first week (target: >10)
+- First week retention (target: >80%)
+
+#### Retention
+- Monthly churn rate (target: <5%)
+- 6-month retention (target: >70%)
+- Tier upgrade rate
+- Resurrection rate
+
+#### Revenue
+- MRR growth rate
+- ARPU by tier
+- Revenue per employee
+- Customer lifetime value
+
+#### Engagement
+- Posts per active user per week
+- Comments per post
+- % of connections active weekly
+- Session duration (target: 5-10 min)
+
+---
+
+## Go-to-Market Strategy
+
+### Launch Strategy
+
+#### Phase 1: Beta (Months 1-3)
+- 1,000 invite-only users
+- Focus on family units
+- Single tier ($4.99) only
+- Heavy customer feedback
+
+#### Phase 2: Soft Launch (Months 4-6)
+- Open registration
+- Introduce tiered pricing
+- PR focus on privacy angle
+- Target 10,000 users
+
+#### Phase 3: Growth (Months 7-12)
+- Paid acquisition begins
+- Family plan introduction
+- Influencer partnerships (micro, not macro)
+- Target 100,000 users
+
+### Marketing Positioning
+- **Not**: "The next Facebook" or "Facebook killer"
+- **But**: "Your family's private social network"
+- **Tagline**: "Socii: Companions with purpose"
+
+### Distribution Strategy
+1. **Family-first onboarding**: One person brings their whole family
+2. **Dinner table moments**: Market around holidays/gatherings
+3. **Privacy advocates**: Partner with privacy-focused organizations
+4. **Expat communities**: High need for family connection
+
+---
+
+## Risks & Mitigation
+
+### Risk Matrix
+Added: User acquisition in ad-free world (high prob/impact); Meta's tier flopped at <5M subs due to trust—our cheaper privacy wins.
+
+| Risk | Probability | Impact | Mitigation |
+|------|------------|---------|------------|
+| Slow network effects | High | High | Family plan, group onboarding |
+| Facebook copies features | Medium | Medium | Focus on trust/values alignment |
+| Payment friction | Medium | High | Multiple payment options, annual plans |
+| Technical scaling issues | Low | High | Start with proven infrastructure |
+| Privacy breach | Low | Critical | Security-first architecture, insurance |
+| User acquisition in ad-free world | High | High | Organic virality via family invites; target CAC <$25 |
+| Low engagement from no dopamine hits | Medium | High | Monitor session metrics; iterate with user feedback |
+
+### Competitive Risks
+- **MeWe**: ~20M users → Differentiate on simplicity.
+- **Bluesky**: ~36M users, rapid growth → Focus on family vs. public discourse.
+- **Meta paid tier**: $14/month → We're 65% cheaper with better privacy.
+
+---
+
+## Development Roadmap
+
+### MVP (3 months)
+- [ ] Core authentication system
+- [ ] Connection management
+- [ ] Chronological feed
+- [ ] Photo/video sharing
+- [ ] Basic messaging
+- [ ] Payment integration
+**Milestone**: Post-beta: If <50% retention, pivot features (e.g., add light nudges).
+
+### Post-MVP (Months 4-6)
+- [ ] Mobile apps
+- [ ] Tiered system
+- [ ] Enhanced privacy controls
+- [ ] Export functionality
+
+### Growth Features (Months 7-12)
+- [ ] Family plan
+- [ ] Group conversations
+- [ ] Event planning
+- [ ] Video calling
+
+---
+
+## Resource Requirements
+
+### Team (Year 1)
+- Product Manager: 1
+- Engineers: 4 (2 backend, 1 iOS, 1 Android)
+- Designer: 1
+- Marketing: 1
+- Customer Success: 1
+- **Total**: 8 people
+
+### Budget
+- Year 1: $1.5M (primarily salaries + infrastructure)
+- Break-even: 25,000 paying users
+- Target: 100,000 users by end of Year 1
+
+---
+
+## Conclusion
+
+Socii represents a return to social media's original promise: connecting people who care about each other. By focusing on a specific, underserved market segment and building a sustainable business model from day one, Socii can succeed where others have failed. The key is not trying to be everything to everyone, but being the perfect solution for people who value their real relationships over viral content.
+
+**Next Steps**:
+1. Validate pricing and pains with 100 potential users (interviews/surveys).
+2. Build landing page MVP for email collection/trial signups.
+3. Recruit 50 beta families for initial testing.
+4. Refine based on feedback before public launch.

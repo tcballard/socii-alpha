@@ -1,0 +1,35 @@
+name = "humanlink-relay"
+main = "src/index.ts"
+compatibility_date = "2025-08-08"
+compatibility_flags = ["nodejs_compat"]
+
+#[[routes]]
+#pattern = "humanlink.example.com/*"
+#zone_id = "<your_zone_id>"
+
+[durable_objects]
+bindings = [
+  { name = "USER_QUEUES", class_name = "UserQueue" }
+]
+
+[[migrations]]
+tag = "v1"
+new_classes = ["UserQueue"]
+
+[[d1_databases]]
+binding = "DB"
+database_name = "humanlink-relay"
+database_id = "42527cb2-1912-414b-8447-46878970ffd4"
+preview_database_id = "deca89b5-eeee-4dab-83d2-c0f8ad2973e7"
+
+[[r2_buckets]]
+bucket_name = "humanlink-media"
+binding = "humanlink_media"
+preview_bucket_name = "humanlink-media-preview"
+
+[vars]
+# Optionally require a shared timestamp tolerance (ms)
+MAX_SKEW_MS = 90000
+DEV_NOAUTH = 1
+
+
