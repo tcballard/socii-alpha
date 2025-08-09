@@ -83,13 +83,13 @@
 }
 
 .btn.primary {
-  background: var(--color-primary);
+  background: linear-gradient(to bottom, var(--color-primary), var(--color-primary-hover));
   color: #ffffff;
   border-color: var(--color-primary);
 }
 
 .btn.primary:hover {
-  background: var(--color-primary-hover);
+  background: linear-gradient(to bottom, var(--color-primary-hover), #1a2d4f);
   border-color: var(--color-primary-hover);
 }
 
